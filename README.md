@@ -98,6 +98,21 @@ DefaultRoot ~ ftpuser
 </Limit>
   ```
 
+Anschließend wird die Datei gespeichert und der ProFTPD Server neu gestartet:
+   ```bash
+sudo systemctl restart proftpd.service
+  ```
+
+### FTP Benutzer erstellen
+Für den FTP Zugriff wird ein eigener BEnutzer ohne gültiger Login-Shell und mit dem Homeverzeichnis 
+   ```bash
+/var/www/upload
+  ```
+  erstellt.
+   ```bash
+sudo adduser ftpuser --shell /bin/false --home /var/www/upload
+  ```
+  
 
 ## Firewall regeln anpassen
 
