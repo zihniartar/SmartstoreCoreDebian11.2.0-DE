@@ -198,7 +198,7 @@ Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
 > ```bash
 >   /var/www/upload
  >  ```
- > übertragen und müssen von da verschoben werden
+ > übertragen und müssen von da verschoben werden.
       	
 ### App starten
 
