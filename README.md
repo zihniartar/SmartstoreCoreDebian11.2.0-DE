@@ -246,7 +246,10 @@ Paket-Cache aktualisieren:
    ```bash
    sudo mysql_secure_installation
    ```
-   Um Benutzerauthentifizierung- und Berechtigungen anzupassen MySQL-Eingabeaufforderung öffnen:
+>Die Einstellungen hier können je nach individuellen Sicherheitsanforderungen variieren.
+
+
+   Um die Benutzerauthentifizierung- und Berechtigungen anzupassen MySQL-Eingabeaufforderung öffnen:
    ```bash
    sudo mysql
    ```
@@ -257,6 +260,30 @@ Authentifizierungsverfahren prüfen:
 Wird der ```root``` Benutzer über das ```auth-socket```-Plugin authentifiziert, muss das ```root```-Konto umkonfiguriert werden. Mit diesem Befehl wird das vorherige ```root```-Passwort geändert. Es sollte ein starkes Passwort gewählt werden (```password``` ersetzen durch eigenes).
 ```bash
    ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+   ```
+Berechtigungstabellen neu laden:
+```bash
+   FLUSH PRIVILEGES;
+   ```
+MySql-Shell verlassen:
+```bash
+   exit
+   ```
+Einen dedizierten MySql-Benutzer für die Nutzung mit Smartstore erstellen:
+```bash
+   mysql -u root -p
+   ```
+```bash
+   CREATE USER 'smartstore'@'localhost' IDENTIFIED BY 'password';
+   ```
+> ```smartstore``` und ```password``` nach belieben ändern
+Benutzerberechtigungen erteilen:
+```bash
+   GRANT ALL PRIVILEGES ON *.* TO 'smartstore'@'localhost' WITH GRANT OPTION;
+   ```
+MySql-Shell verlassen:
+```bash
+   exit
    ```
 
 to be continued...
