@@ -222,9 +222,15 @@ Die [MySQL Downloadseite](https://dev.mysql.com/downloads/repo/apt/) im Browser 
 
 Die Datei auf den Server herunterladen (statt der URL zur ```.deb```-Datei, die oben kopierte URL einfügen):
    ```bash
+   cd /tmp
    wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
    ```
 
+Die Datei wurde in das aktuelle Verzeichnis heruntergeladen und kann installiert werden:
+   ```bash
+   sudo dpkg -i mysql-apt-config*
+   ```
+```dpkg``` wird zum Installieren, Entfernen und Überprüfen von ```.deb```-Softwarepaketen verwendet. Der Schalter ```-i``` zeigt an, dass die angegebene Datei installiert werden soll.
 
 
 Installation aufrufen:
