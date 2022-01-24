@@ -27,9 +27,30 @@
    ```
 
 
- - gfdf
- - dfg
+ - NGINX installieren
+      ```bash
+   sudo apt install nginx -y
+   ```
+
+ - NGINX starten, stoppen, neu starten und Konfiguration neu laden
+      ```bash
+	sudo systemctl start nginx
+	  ```
+     ```bash
+     sudo systemctl stop nginx
+     ```
+     ```bash
+   sudo systemctl restart nginx
+   ```
+     ```bash
+   sudo systemctl reload nginx
+   ```
+
+
+
+
  - dfgdf
  - gdfgdf
  - dfgdfg
 
+> Written with [StackEdit](https://stackedit.io/).
