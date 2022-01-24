@@ -265,11 +265,11 @@ Berechtigungstabellen neu laden:
 ```bash
    FLUSH PRIVILEGES;
    ```
-MySql-Shell verlassen:
+MySQL-Shell verlassen:
 ```bash
    exit
    ```
-Einen dedizierten MySql-Benutzer für die Nutzung mit Smartstore erstellen:
+Einen dedizierten MySQL-Benutzer für die Nutzung mit Smartstore erstellen:
 ```bash
    mysql -u root -p
    ```
@@ -277,6 +277,7 @@ Einen dedizierten MySql-Benutzer für die Nutzung mit Smartstore erstellen:
    CREATE USER 'smartstore'@'localhost' IDENTIFIED BY 'password';
    ```
 > ```smartstore``` und ```password``` nach belieben ändern
+
 Benutzerberechtigungen erteilen:
 ```bash
    GRANT ALL PRIVILEGES ON *.* TO 'smartstore'@'localhost' WITH GRANT OPTION;
