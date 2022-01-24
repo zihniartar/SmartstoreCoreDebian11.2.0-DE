@@ -259,6 +259,7 @@ Wird der ```root``` Benutzer über das ```auth-socket```-Plugin authentifiziert,
    ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
    ```
 
+to be continued...
 
 
  
