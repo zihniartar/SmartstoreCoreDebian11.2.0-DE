@@ -14,53 +14,55 @@
 
 ## NGINX installieren
 
- - Das System aktualisieren und benötigte Pakete installieren:
+ ### Das System aktualisieren und benötigte Pakete installieren:
 
    ```bash
    sudo apt update -y
    ```
-      ```bash
+   ```bash
    sudo apt upgrade -y
    ```
-      ```bash
+   ```bash
    sudo apt install curl gnupg2 ca-certificates lsb-release
    ```
 
 
- - NGINX installieren
-      ```bash
+ ### NGINX installieren
+   ```bash
    sudo apt install nginx -y
    ```
 
- - NGINX starten, stoppen, neu starten und Konfiguration neu laden:
+ ### NGINX starten, stoppen, neu starten und Konfiguration neu laden:
       ```bash
 	sudo systemctl start nginx
 	  ```
      ```bash
      sudo systemctl stop nginx
      ```
-     ```bash
+   ```bash
    sudo systemctl restart nginx
    ```
-     ```bash
+   ```bash
    sudo systemctl reload nginx
    ```
- - Die installierte Version von NGINX prüfen:
-      ```bash
+
+ ### Die installierte Version von NGINX prüfen:
+   ```bash
 	sudo nginx -v
-	  ```
- - Die NGINX-Konfiguration auf Fehler prüfen:
-      ```bash
+   ```
+ ### Die NGINX-Konfiguration auf Fehler prüfen:
+ ```bash
 	sudo nginx -t
-	  ```
-- NGINX als Dienst beim Systemstart starten:
-     ```bash
+  ```
+
+### NGINX als Dienst beim Systemstart starten:
+   ```bash
 	sudo systemctl enable nginx
   ```
 
 ## Firewall regeln anpassen
 
- - Liste der bereits eingerichteten Anwendungsprofile ausgeben:
+ ### Liste der bereits eingerichteten Anwendungsprofile ausgeben:
 
    ```bash
    sudo ufw app list
@@ -71,13 +73,13 @@
  >  ```
  > quittiert, dann ist keine Firewall installiert und dieser Punkt kann erst einmal übersprungen werden.
 
- - In der ausgebenen Liste sind drei NGINX-Profile vorhanden
-
-	  **Nginx Full**: Dieses Profil öffnet Port 80 und 443 für NGINX
-	  **Nginx HTTP**: Dieses Profil öffnet nur Port 80 für NGINX
-	  **Nginx HTTPS**: Dieses Profil öffnet nur Port 443 für NGINX
+ ### In der ausgebenen Liste sind drei NGINX-Profile vorhanden:
  
-- Port 80 und Port 443 für NGINX zulassen:
+	 - **Nginx Full**: Dieses Profil öffnet Port 80 und 443 für NGINX
+	 - **Nginx HTTP**: Dieses Profil öffnet nur Port 80 für NGINX
+	 - **Nginx HTTPS**: Dieses Profil öffnet nur Port 443 für NGINX
+ 
+### Port 80 und Port 443 für NGINX zulassen:
    ```bash
    sudo ufw allow 'Nginx FULL'
    ```
