@@ -53,7 +53,7 @@
       ```bash
 	sudo nginx -t
 	  ```
-- Die NGINX als Dienst beim Systemstart starten:
+- NGINX als Dienst beim Systemstart starten:
       ```bash
 	sudo systemctl enable nginx
 	  ```
