@@ -73,7 +73,7 @@
 
  - In der ausgebenen Liste sind drei NGINX-Profile vorhanden
 
-	  **Nginx Full**: Dieses Prodil öffnet Port 80 und 443 für NGINX
+	  **Nginx Full**: Dieses Profil öffnet Port 80 und 443 für NGINX
 	  **Nginx HTTP**: Dieses Profil öffnet nur Port 80 für NGINX
 	  **Nginx HTTPS**: Dieses Profil öffnet nur Port 443 für NGINX
  
