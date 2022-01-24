@@ -187,7 +187,20 @@ sudo adduser ftpuser --shell /bin/false --home /var/www/upload
 	sudo systemctl reload nginx
 	```
 
- 
+## Dateien übertragen und starten
+### Dateien übertragen
+Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
+   ```bash
+	/var/www/html
+``` 
+übertragen.
+> **Hinweis:** Bei unserem Beispiel FTP-Benutzer werden die Dateien per FTP nach 
+> ```bash
+>   /var/www/upload
+ >  ```
+ > übertragen und müssen von da verschoben werden
+      	
+### App starten
 
 
  
