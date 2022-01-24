@@ -60,6 +60,45 @@ sudo systemctl reload nginx
 	sudo systemctl enable nginx
   ```
 
+## FTP-Server installieren und konfigurieren
+### Installation
+   ```bash
+sudo apt update
+sudo apt install proftpd-basic
+  ```
+
+### Konfiguration
+Die Konfigurationsdateien befinden sich im folgeden Ordner:
+   ```bash
+/etc/proftpd/
+  ```
+Eigene Konfigurationsdateien sollten am besten im Verzeichnis
+   ```bash
+conf.d
+  ```
+  abgelegt werden.
+  
+Wir erstellen mit diesem Befehl eine neue Konfigurationsdatei:
+   ```bash
+sudo vi /etc/proftpd/conf.d/custom.confcustom
+  ```
+Und fügen folgende Zeilen ein:
+   ```bash
+ # Ftp user doesn't need a valid shell
+<Global>
+    RequireValidShell off
+</Global>
+ # If desired turn off IPv6
+UseIPv6 off
+ # Default directory is ftpusers home
+DefaultRoot ~ ftpuser
+ # Limit login to the ftpuser group
+<Limit LOGIN>
+    DenyGroup !ftpuser
+</Limit>
+  ```
+
+
 ## Firewall regeln anpassen
 
  ### Liste der bereits eingerichteten Anwendungsprofile ausgeben:
@@ -124,9 +163,14 @@ sudo systemctl reload nginx
         proxy_set_header   X-Forwarded-Proto $scheme;
     }
 	```
-
-
-
+	Wenn noch keine Domain vorhanden ist, kann auch eine IP-Adresse eingetragen werden:
+	```bash
+	server_name 172.16.1.17;
+	```
+	Hiernach muss die NGINX-Konfiguration neu geladen werden:
+	```bash
+	sudo systemctl reload nginx
+	```
 
  
 
