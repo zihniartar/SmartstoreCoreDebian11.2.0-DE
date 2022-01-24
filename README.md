@@ -9,8 +9,8 @@
 ## Debian Server vorbereiten
 
  - NGINX Reverse Proxy installieren
- - todo
- - todo
+ - FTP-Server installieren
+ - Firewall anpassen
 
 ## NGINX installieren
 
