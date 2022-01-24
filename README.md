@@ -69,7 +69,9 @@
 > ```bash
 >   sudo: ufw: Befehl nicht gefunden
  >  ```
- > quittiert, dann ist keine Firewall installiert und dieser Punkt kann erst einmal übersprungen > >werden.
+ > quittiert, dann ist keine Firewall installiert und dieser Punkt kann erst einmal übersprungen werden.
+
+
  
  
 
