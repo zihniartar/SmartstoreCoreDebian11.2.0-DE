@@ -32,7 +32,7 @@
    sudo apt install nginx -y
    ```
 
- - NGINX starten, stoppen, neu starten und Konfiguration neu laden
+ - NGINX starten, stoppen, neu starten und Konfiguration neu laden:
       ```bash
 	sudo systemctl start nginx
 	  ```
