@@ -54,9 +54,9 @@
 	sudo nginx -t
 	  ```
 - NGINX als Dienst beim Systemstart starten:
-      ```bash
+     ```bash
 	sudo systemctl enable nginx
-	  ```
+  ```
 
 ## Firewall regeln anpassen
 
