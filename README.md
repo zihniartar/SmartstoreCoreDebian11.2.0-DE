@@ -83,7 +83,24 @@ sudo systemctl reload nginx
    ```bash
    sudo ufw allow 'Nginx FULL'
    ```
--
+   
+### Das Ergebnis prüfen:
+   ```bash
+   sudo ufw status
+   ```
+ 
+ ## NGINX einrichten
+ ### Standard NGINX-Seite aufrufen
+ - IP-Adresse herausfinden, wenn unbekannt
+    ```bash
+   hostname -I
+   ```
+- Im Browser NGINX-Startseite per IP aufrufen
+	 ```bash
+	http://ip-adresse
+	```
+
+   
  
 
 
