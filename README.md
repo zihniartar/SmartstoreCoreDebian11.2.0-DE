@@ -218,10 +218,11 @@ Lokalen Paket-Index aktualisieren:
 sudo apt install gnupg
    ```
 Als nächstes das MySQL ```.deb``` Paket mit ```wget``` herunterladen und installieren:
-Die [MySQL Downloadseite](https://dev.mysql.com/downloads/repo/apt/) im Browser öffnen und unten rechts den **Download** Button drücken.
-Lokalen Paket-Index aktualisieren:
+Die [MySQL Downloadseite](https://dev.mysql.com/downloads/repo/apt/) im Browser öffnen und unten rechts den **Download** Button drücken und. Die Aufforderung zum Login bzw. Anmelden ignorieren und mit der rechten Maustaste die Adresse des Links "**Nein Danke...**" kopieren.
+
+Die Datei auf den Server herunterladen (statt der URL zur ```.deb```-Datei, die oben kopierte URL einfügen):
    ```bash
-   sudo apt update
+   wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
    ```
 
 
