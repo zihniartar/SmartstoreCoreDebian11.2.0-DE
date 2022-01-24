@@ -33,17 +33,17 @@
    ```
 
  ### NGINX starten, stoppen, neu starten und Konfiguration neu laden:
-      ```bash
-	sudo systemctl start nginx
-	  ```
-     ```bash
-     sudo systemctl stop nginx
-     ```
    ```bash
-   sudo systemctl restart nginx
-   ```
-   ```bash
-   sudo systemctl reload nginx
+sudo systemctl start nginx
+```
+ ```bash
+sudo systemctl stop nginx
+  ```
+```bash
+sudo systemctl restart nginx
+ ```
+ ```bash
+sudo systemctl reload nginx
    ```
 
  ### Die installierte Version von NGINX prüfen:
