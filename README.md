@@ -9,8 +9,8 @@
 ## Debian Server vorbereiten
 
  - NGINX Reverse Proxy installieren
- - sdfdsf
- - sdfdsf
+ - todo
+ - todo
 
 ## NGINX installieren
 
@@ -73,16 +73,5 @@
  
  
 
-      ```bash
-   sudo apt upgrade -y
-   ```
-      ```bash
-   sudo apt install curl gnupg2 ca-certificates lsb-release
-   ```
 
 
- - dfgdf
- - gdfgdf
- - dfgdfg
-
-> Written with [StackEdit](https://stackedit.io/).
