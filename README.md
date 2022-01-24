@@ -282,7 +282,7 @@ Benutzerberechtigungen erteilen:
 ```bash
    GRANT ALL PRIVILEGES ON *.* TO 'smartstore'@'localhost' WITH GRANT OPTION;
    ```
-MySql-Shell verlassen:
+MySQL-Shell verlassen:
 ```bash
    exit
    ```
