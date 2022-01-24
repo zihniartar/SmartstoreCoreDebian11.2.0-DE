@@ -208,6 +208,24 @@ Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
 
  ### Das Paket ```mysql-server``` installieren:
 
+MySQL Repository konfigurieren:
+Lokalen Paket-Index aktualisieren:
+   ```bash
+   sudo apt update
+   ```
+   ```gnupg``` installieren:
+   ```bash
+sudo apt install gnupg
+   ```
+Als nächstes das MySQL ```.deb``` Paket mit ```wget``` herunterladen und installieren:
+Die [MySQL Downloadseite](https://dev.mysql.com/downloads/repo/apt/) im Browser öffnen und unten rechts den **Download** Button drücken.
+Lokalen Paket-Index aktualisieren:
+   ```bash
+   sudo apt update
+   ```
+
+
+
 Installation aufrufen:
    ```bash
    sudo apt install mysql-server
