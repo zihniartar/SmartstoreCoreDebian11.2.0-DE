@@ -11,6 +11,8 @@
  - NGINX Reverse Proxy installieren
  - FTP-Server installieren
  - Firewall anpassen
+ - MySQL installieren
+ - Smartstore installieren
 
 ## NGINX installieren
 
@@ -201,6 +203,32 @@ Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
  > übertragen und müssen von da verschoben werden.
       	
 ### App starten
+
+## MySQL installieren
+
+ ### Das Paket ```mysql-server``` installieren:
+
+Installation aufrufen:
+   ```bash
+   sudo apt install mysql-server
+   ```
+   Sicherheitsskript ausführen:
+   ```bash
+   sudo mysql_secure_installation
+   ```
+   Um Benutzerauthentifizierung- und Berechtigungen anzupassen MySQL-Eingabeaufforderung öffnen:
+   ```bash
+   sudo mysql
+   ```
+Authentifizierungsverfahren prüfen:
+```bash
+   SELECT user,authentication_string,plugin,host FROM mysql.user;
+   ```
+Wird der ```root``` Benutzer über das ```auth-socket```-Plugin authentifiziert, muss das ```root```-Konto umkonfiguriert werden. Mit diesem Befehl wird das vorherige ```root```-Passwort geändert. Es sollte ein starkes Passwort gewählt werden (```password``` ersetzen durch eigenes).
+```bash
+   ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+   ```
+
 
 
  
