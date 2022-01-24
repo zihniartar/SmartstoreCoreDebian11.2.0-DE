@@ -231,9 +231,14 @@ Die Datei wurde in das aktuelle Verzeichnis heruntergeladen und kann installiert
    sudo dpkg -i mysql-apt-config*
    ```
 ```dpkg``` wird zum Installieren, Entfernen und Überprüfen von ```.deb```-Softwarepaketen verwendet. Der Schalter ```-i``` zeigt an, dass die angegebene Datei installiert werden soll.
+Während der Installation wird ein Konfigurationsbildschirm angezeigt, im dem die gewünschte Version von MySQL angegeben werden kann.
 
+Paket-Cache aktualisieren:
+   ```bash
+   sudo apt update
+   ```
 
-Installation aufrufen:
+**MySQL-Installation** aufrufen:
    ```bash
    sudo apt install mysql-server
    ```
