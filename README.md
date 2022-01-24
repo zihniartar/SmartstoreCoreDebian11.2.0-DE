@@ -60,7 +60,7 @@
 
 ## Firewall regeln anpassen
 
- - Liste der bereits eingerichteten Anwendungskonfigurationen ausgeben:
+ - Liste der bereits eingerichteten Anwendungsprofile ausgeben:
 
    ```bash
    sudo ufw app list
@@ -70,6 +70,18 @@
 >   sudo: ufw: Befehl nicht gefunden
  >  ```
  > quittiert, dann ist keine Firewall installiert und dieser Punkt kann erst einmal übersprungen werden.
+ - In der ausgebenen Liste sind drei NGINX-Profilevorhanden
+
+ - **Nginx Full**: Dieses Prodil öffnet Port 80 und 443 für NGINX
+ - **Nginx HTTP**: Dieses Profil öffnet nur Port 80 für NGINX
+ - **Nginx HTTPS**: Dieses Profil öffnet nur Port 443 für NGINX
+ 
+- Port 80 und Port 443 für NGINX zulassen:
+   ```bash
+   sudo ufw allow 'Nginx FULL'
+   ```
+-
+ 
 
 
  
