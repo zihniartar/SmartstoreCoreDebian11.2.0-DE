@@ -45,6 +45,14 @@
      ```bash
    sudo systemctl reload nginx
    ```
+ - Die installierte Version von NGINX prüfen:
+      ```bash
+	sudo nginx -v
+	  ```
+ - Die NGINX-Konfiguration auf Fehler prüfen:
+      ```bash
+	sudo nginx -t
+	  ```
 
 
 
@@ -53,4 +61,4 @@
  - gdfgdf
  - dfgdfg
 
-
+> Written with [StackEdit](https://stackedit.io/).
