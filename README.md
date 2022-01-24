@@ -53,8 +53,32 @@
       ```bash
 	sudo nginx -t
 	  ```
+- Die NGINX als Dienst beim Systemstart starten:
+      ```bash
+	sudo systemctl enable nginx
+	  ```
 
+## Firewall regeln anpassen
 
+ - Liste der bereits eingerichteten Anwendungskonfigurationen ausgeben:
+
+   ```bash
+   sudo ufw app list
+   ```
+> **Hinweis:** Wird der Befehl mit 
+> ```bash
+>   sudo: ufw: Befehl nicht gefunden
+ >  ```
+ > quittiert, dann ist keine Firewall aktiv und dieser Punkt kann erst einmal übersprungen > >werden.
+ 
+ 
+
+      ```bash
+   sudo apt upgrade -y
+   ```
+      ```bash
+   sudo apt install curl gnupg2 ca-certificates lsb-release
+   ```
 
 
  - dfgdf
