@@ -99,6 +99,10 @@ sudo systemctl reload nginx
 	 ```bash
 	http://ip-adresse
 	```
+- Es wird die Standard-Landingpage für NGINX angezeigt
+
+	![NGINX-Landingspage](https://www.smartstore.com/news/images/Qs7PlUtvga.png)
+
 
    
  
