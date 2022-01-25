@@ -322,7 +322,7 @@ WantedBy=multi-user.target
 >```
 > Code bei **eigenständiger Bereitstellung**:
 >```bash
->ExecStart=/var/www/html/Smartstore.Web.dll
+>ExecStart=/var/www/html/Smartstore.Web
 >```
 
 
