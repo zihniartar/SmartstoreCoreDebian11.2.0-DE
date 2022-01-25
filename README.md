@@ -336,7 +336,7 @@ sudo systemctl start kestrel-smartstore.service
 ``` 
 Dienst soppen:
 ```bash
-sudo systemctl stopp kestrel-smartstore.service
+sudo systemctl stop kestrel-smartstore.service
 ```
 
 ### ```wkhtmltopdf``` installieren
