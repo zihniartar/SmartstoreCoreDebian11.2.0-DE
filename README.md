@@ -358,12 +358,20 @@ Webserver als Gruppen-Besitzer setzen:
 ```bash
 chgrp -R www-data /var/www/html/
 ```
-Rekursiv für alle Dateien und Ordner Lese-, Schreib- und Ausführungsrechte für den Besitzer, Lese- und Ausführungsrechte für den Gruppen-Besitzer und keine Rechte für andere:
+Rekursiv für alle Dateien und Ordner Lese-, Schreib- und Ausführungsrechte für den Besitzer, Lese- und Ausführungsrechte für den Gruppen-Besitzer und keine Rechte für andere festlegen:
 
 ```bash
 chmod -R 750 /var/www/html/
 ```
+Gruppenbesitz auf neue Dateien und Ordner vererben:
 
+```bash
+chmod g+s /var/www/html/
+```
+Spezielle Ordner rekursiv mit Schreibrechten für Webserver versehen:
+```bash
+chmod -R g+w /var/www/html/App_Data
+```
 
 
 ### Smartstore installieren
