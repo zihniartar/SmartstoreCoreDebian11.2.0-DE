@@ -14,6 +14,7 @@
  - Firewall anpassen
  - MySQL installieren
  - Smartstore installieren
+ - Tipps & Tricks
 
 ## NGINX installieren
 
@@ -382,6 +383,33 @@ Die Website per IP-Adresse oder Domainname aufrufen und die erforderlichen Daten
 ![Startseite der Installation](https://www.smartstore.com/news/images/smartstore_installation_de_640px.png)
 
 > Der MySQL-Server ist per localhost erreichbar. Als Anmeldename für die Datenbank ist der für diese Installation eigens angelegte MySQL-Benutzer zu verwenden
+
+Nachdem alle erforderlichen Daten eingegeben wurden, wird die Installation per Klick auf **Installieren** gestartet.
+Nach der Fertigstellung der Installation erscheint die Startseite mit den Demo-Daten:
+
+![Startseite](https://www.smartstore.com/news/images/smartstore_core_Startseite-640px.png)
+
+### Tipps & Tricks
+Um die **maximale Dateiuploadgröße** zu  ändern wird die Datei ```/etc/nginx/nginx.conf``` mit einem Editor geöffnet.
+Die Einstellung kann an zwei Stellen vorgenommen werden:
+
+Im Http-Block: Einstellung gilt für alle virtuellen Hosts.
+```bash
+http {
+    ...
+    client_max_body_size 100M;
+}
+```
+
+Im Server-Block: Einstellung gilt nur für diese spezielle Site/App.
+```bash
+server {
+    ...
+    client_max_body_size 100M;
+}
+```
+
+
 to be continued...
 
 
