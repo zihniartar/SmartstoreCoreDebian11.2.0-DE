@@ -7,7 +7,7 @@
  - Debian 11
  - Nicht root Benutzer mit sudo-Rechten
 
-## Debian Server vorbereiten
+## Ablauf
 
  - NGINX Reverse Proxy installieren
  - FTP-Server installieren
