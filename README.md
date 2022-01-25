@@ -52,16 +52,16 @@ sudo systemctl reload nginx
 
  ### Die installierte Version von NGINX prüfen:
    ```bash
-	sudo nginx -v
+sudo nginx -v
    ```
  ### Die NGINX-Konfiguration auf Fehler prüfen:
  ```bash
-	sudo nginx -t
+sudo nginx -t
   ```
 
 ### NGINX als Dienst beim Systemstart starten:
    ```bash
-	sudo systemctl enable nginx
+sudo systemctl enable nginx
   ```
 
 ## FTP-Server installieren und konfigurieren
@@ -127,7 +127,7 @@ sudo adduser ftpuser --shell /bin/false --home /var/www/upload
    ```
 > **Hinweis:** Wird der Befehl mit 
 > ```bash
->   sudo: ufw: Befehl nicht gefunden
+> sudo: ufw: Befehl nicht gefunden
  >  ```
  > quittiert, dann ist keine Firewall installiert und dieser Punkt kann erst einmal übersprungen werden.
 
@@ -162,44 +162,45 @@ sudo adduser ftpuser --shell /bin/false --home /var/www/upload
 	![NGINX-Landingspage](https://www.smartstore.com/news/images/Qs7PlUtvga.png)
 
 ### NGINX als Reverse-Proxy konfigurieren
-- Folgende Datei mit einem Editor öffnen und den Inhalt durch den Codeausschnitt ersetzen:
+Folgende Datei mit einem Editor öffnen und den Inhalt durch den Codeausschnitt ersetzen:
 	 ```bash
 	/etc/nginx/sites-available/default
 	```
 
-	 ```bash
-	server {
-    listen        80;
-    server_name   example.com *.example.com;
-    location / {
-        proxy_pass         http://127.0.0.1:5000;
-        proxy_http_version 1.1;
-        proxy_set_header   Upgrade $http_upgrade;
-        proxy_set_header   Connection keep-alive;
-        proxy_set_header   Host $host;
-        proxy_cache_bypass $http_upgrade;
-        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header   X-Forwarded-Proto $scheme;
+```bash
+server {
+listen        80;
+server_name   example.com *.example.com;
+location / {
+proxy_pass         http://127.0.0.1:5000;
+proxy_http_version 1.1;
+proxy_set_header   Upgrade $http_upgrade;
+proxy_set_header   Connection keep-alive;
+proxy_set_header   Host $host;
+proxy_cache_bypass $http_upgrade;
+proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header   X-Forwarded-Proto $scheme;
     }
-	```
-	Wenn noch keine Domain vorhanden ist, kann auch eine IP-Adresse eingetragen werden:
-	```bash
-	server_name 172.16.1.17;
-	```
-	Hiernach muss die NGINX-Konfiguration neu geladen werden:
-	```bash
-	sudo systemctl reload nginx
-	```
+```
+
+Wenn noch keine Domain vorhanden ist, kann auch eine IP-Adresse eingetragen werden:
+```bash
+server_name 172.16.1.17;
+```
+Hiernach muss die NGINX-Konfiguration neu geladen werden:
+```bash
+sudo systemctl reload nginx
+```
 
 
 ## MySQL installieren
 
  ### Das Paket ```mysql-server``` installieren:
 
-MySQL Repository konfigurieren:
+**MySQL Repository konfigurieren**
 Lokalen Paket-Index aktualisieren:
    ```bash
-   sudo apt update
+sudo apt update
    ```
    ```gnupg``` installieren:
    ```bash
@@ -216,7 +217,7 @@ Die Datei auf den Server herunterladen (statt der URL zur ```.deb```-Datei, die 
 
 Die Datei wurde in das aktuelle Verzeichnis heruntergeladen und kann installiert werden:
    ```bash
-   sudo dpkg -i mysql-apt-config*
+sudo dpkg -i mysql-apt-config*
    ```
 ```dpkg``` wird zum Installieren, Entfernen und Überprüfen von ```.deb```-Softwarepaketen verwendet. Der Schalter ```-i``` zeigt an, dass die angegebene Datei installiert werden soll.
 Während der Installation wird ein Konfigurationsbildschirm angezeigt, im dem die gewünschte Version von MySQL angegeben werden kann.
@@ -243,7 +244,7 @@ Paket-Cache aktualisieren:
    ```
 Authentifizierungsverfahren prüfen:
 ```bash
-   SELECT user,authentication_string,plugin,host FROM mysql.user;
+SELECT user,authentication_string,plugin,host FROM mysql.user;
    ```
 Wird der ```root``` Benutzer über das ```auth-socket```-Plugin authentifiziert, muss das ```root```-Konto umkonfiguriert werden. Mit diesem Befehl wird das vorherige ```root```-Passwort geändert. Es sollte ein starkes Passwort gewählt werden (```password``` ersetzen durch eigenes).
 ```bash
@@ -251,40 +252,40 @@ Wird der ```root``` Benutzer über das ```auth-socket```-Plugin authentifiziert,
    ```
 Berechtigungstabellen neu laden:
 ```bash
-   FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
    ```
 MySQL-Shell verlassen:
 ```bash
-   exit
+exit
    ```
 Einen dedizierten MySQL-Benutzer für die Nutzung mit Smartstore erstellen:
 ```bash
-   mysql -u root -p
+mysql -u root -p
    ```
 ```bash
-   CREATE USER 'smartstore'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'smartstore'@'localhost' IDENTIFIED BY 'password';
    ```
 > ```smartstore``` und ```password``` nach belieben ändern
 
 Benutzerberechtigungen erteilen:
 ```bash
-   GRANT ALL PRIVILEGES ON *.* TO 'smartstore'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'smartstore'@'localhost' WITH GRANT OPTION;
    ```
 MySQL-Shell verlassen:
 ```bash
-   exit
+exit
    ```
 
 ## Smartstore installieren
 ### Dateien übertragen
 Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
    ```bash
-	/var/www/html
+/var/www/html
 ``` 
 übertragen.
 > **Hinweis:** Bei unserem Beispiel FTP-Benutzer werden die Dateien per FTP nach 
 > ```bash
->   /var/www/upload
+>/var/www/upload
  >  ```
  > übertragen und müssen von da verschoben werden.
       	
