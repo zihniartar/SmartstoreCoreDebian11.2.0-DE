@@ -1,3 +1,4 @@
+
 # Installieren von Smartstore Core auf Debian 11.2.0
 
 ## Voraussetzungen
@@ -189,20 +190,6 @@ sudo adduser ftpuser --shell /bin/false --home /var/www/upload
 	sudo systemctl reload nginx
 	```
 
-## Dateien übertragen und starten
-### Dateien übertragen
-Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
-   ```bash
-	/var/www/html
-``` 
-übertragen.
-> **Hinweis:** Bei unserem Beispiel FTP-Benutzer werden die Dateien per FTP nach 
-> ```bash
->   /var/www/upload
- >  ```
- > übertragen und müssen von da verschoben werden.
-      	
-### App starten
 
 ## MySQL installieren
 
@@ -251,7 +238,7 @@ Paket-Cache aktualisieren:
 
    Um die Benutzerauthentifizierung- und Berechtigungen anzupassen MySQL-Eingabeaufforderung öffnen:
    ```bash
-   sudo mysql
+   mysql -u root -p
    ```
 Authentifizierungsverfahren prüfen:
 ```bash
@@ -286,6 +273,50 @@ MySQL-Shell verlassen:
 ```bash
    exit
    ```
+
+## Smartstore installieren
+### Dateien übertragen
+Die Dateien aus dem Release per FTP auf den Debian-Server in den Ordner
+   ```bash
+	/var/www/html
+``` 
+übertragen.
+> **Hinweis:** Bei unserem Beispiel FTP-Benutzer werden die Dateien per FTP nach 
+> ```bash
+>   /var/www/upload
+ >  ```
+ > übertragen und müssen von da verschoben werden.
+      	
+### App als Dienst einrichten
+Erstellen einer Dienstdefinitionsdatei für ```systemd```:
+```bash
+sudo nano /etc/systemd/system/kestrel-smartstore.service
+``` 
+Folgenden Code-Ausschnitt einfügen und speichern:
+```bash
+[Unit]
+Description=Smartstore Core Web App running on Ubuntu
+
+[Service]
+WorkingDirectory=/var/www/html
+ExecStart=/usr/bin/dotnet /var/www/html/Smartstore.Web.dll
+Restart=always
+#Restart service after 10 seconds if dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=smartstore-core
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
+``` 
+> **Hinweis**: Pfade in ```WorkingDirectory``` und ```ExcecStart``` ggf. anpassen.
+> Bei ```ExcecStart``` : **Smartstore.Web.dll** bei framework-abhängiger Bereitstellung", **Smartstore.Web** bei eigenständiger Bereitstellung.
+
+
+### App starten
 
 to be continued...
 
