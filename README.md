@@ -373,7 +373,7 @@ Spezielle Ordner rekursiv mit Schreibrechten für Webserver versehen:
 chmod -R g+w /var/www/html/App_Data
 ```
 ```bash
-chmod -R g+w /var/www/html/html
+chmod -R g+w /var/www/html/modules
 ```
 
 ### Smartstore installieren
