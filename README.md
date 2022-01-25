@@ -296,7 +296,7 @@ Folgenden Code-Ausschnitt einfügen und speichern:
 > Bitte die Hinweise unter dem Codeblock beachten!
 ```bash
 [Unit]
-Description=Smartstore Core Web App running on Ubuntu
+Description=Smartstore Core Web App running on Linux
 
 [Service]
 WorkingDirectory=/var/www/html
@@ -325,9 +325,24 @@ WantedBy=multi-user.target
 >ExecStart=/var/www/html/Smartstore.Web
 >```
 
+### Dienst aktivieren und starten
+Dienst aktivieren:
+```bash
+sudo systemctl enable kestrel-smartstore.service
+``` 
+Dienst starten:
+```bash
+sudo systemctl start kestrel-smartstore.service
+``` 
+Dienst soppen:
+```bash
+sudo systemctl stopp kestrel-smartstore.service
+```
+
+### ```wkhtmltopdf``` installieren
 
 
-### App starten
+
 
 to be continued...
 
