@@ -312,8 +312,8 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 [Install]
 WantedBy=multi-user.target
 ``` 
-> **Hinweis**: Pfade in ```WorkingDirectory``` und ```ExcecStart``` ggf. anpassen.
-> Bei ```ExcecStart``` : **Smartstore.Web.dll** bei framework-abhängiger Bereitstellung", **Smartstore.Web** bei eigenständiger Bereitstellung.
+> **Hinweis**: Pfade in ```WorkingDirectory``` und ```ExecStart``` ggf. anpassen.
+> Bei ```ExecStart``` : **Smartstore.Web.dll** bei framework-abhängiger Bereitstellung", **Smartstore.Web** bei eigenständiger Bereitstellung.
 
 
 ### App starten
