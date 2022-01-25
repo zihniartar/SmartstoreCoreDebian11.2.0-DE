@@ -293,6 +293,7 @@ Erstellen einer Dienstdefinitionsdatei für ```systemd```:
 sudo nano /etc/systemd/system/kestrel-smartstore.service
 ``` 
 Folgenden Code-Ausschnitt einfügen und speichern:
+> Bitte die Hinweise unter dem Codeblock beachten!
 ```bash
 [Unit]
 Description=Smartstore Core Web App running on Ubuntu
@@ -313,7 +314,17 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 WantedBy=multi-user.target
 ``` 
 > **Hinweis**: Pfade in ```WorkingDirectory``` und ```ExecStart``` ggf. anpassen.
-> Bei ```ExecStart``` : **Smartstore.Web.dll** bei framework-abhängiger Bereitstellung", **Smartstore.Web** bei eigenständiger Bereitstellung.
+
+> **Wichtig**: 
+> Code bei **frameworkabhängiger Bereitstellung**:
+>```bash
+>ExecStart=/usr/bin/dotnet /var/www/html/Smartstore.Web.dll
+>```
+> Code bei **eigenständiger Bereitstellung**:
+>```bash
+>ExecStart=/var/www/html/Smartstore.Web.dll
+>```
+
 
 
 ### App starten
