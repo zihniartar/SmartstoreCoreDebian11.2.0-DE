@@ -347,12 +347,31 @@ sudo apt-get update
 sudo apt-get -y install wkhtmltopdf
 ```
 
+### Festlegen der Ordnerberechtigungen
+Eigenen Benutzer als Besitzer des Website-Ordners mit vollen Lese-, Schreib- und Ausführungsrechten setzen:
+
+> **Hinweis:** ```smartstore``` ist beispielhaft der eigene Benutzer
+```bash
+chown -R smartstore /var/www/html/
+```
+Webserver als Gruppen-Besitzer setzen:
+```bash
+chgrp -R www-data /var/www/html/
+```
+Rekursiv für alle Dateien und Ordner Lese-, Schreib- und Ausführungsrechte für den Besitzer, Lese- und Ausführungsrechte für den Gruppen-Besitzer und keine Rechte für andere:
+
+```bash
+chmod -R 750 /var/www/html/
+```
+
+
+
 ### Smartstore installieren
-Die Website per IP-Adresse oder Domainname aufrufen.
+Die Website per IP-Adresse oder Domainname aufrufen und die erforderlichen Daten eingeben.
 
 ![Startseite der Installation](https://www.smartstore.com/news/images/smartstore_installation_de_640px.png)
 
-
+> Der MySQL-Server ist per localhost erreichbar. Als Anmeldename für die Datenbank ist der für diese Installation eigens angelegte MySQL-Benutzer zu verwenden
 to be continued...
 
 
