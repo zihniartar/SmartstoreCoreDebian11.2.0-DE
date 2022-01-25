@@ -340,8 +340,17 @@ sudo systemctl stop kestrel-smartstore.service
 ```
 
 ### ```wkhtmltopdf``` installieren
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get -y install wkhtmltopdf
+```
 
+### Smartstore installieren
+Die Website per IP-Adresse oder Domainname aufrufen.
 
+![Startseite der Installation](https://www.smartstore.com/news/images/smartstore_installation_de_640px.png)
 
 
 to be continued...
