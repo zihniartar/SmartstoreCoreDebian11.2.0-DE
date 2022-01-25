@@ -334,7 +334,7 @@ Dienst starten:
 ```bash
 sudo systemctl start kestrel-smartstore.service
 ``` 
-Dienst soppen:
+Dienst stoppen:
 ```bash
 sudo systemctl stop kestrel-smartstore.service
 ```
